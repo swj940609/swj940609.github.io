@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="呼叫中心系统技术学习笔记标签（空格分隔）： cti 软电话 crm  ###前言近日读了《我编程 我快乐 程序员职业规划之道》后，深有同感，身为一个初入行业的javaEE开发者，既然选择了cti领域，却不知道行业发展趋势和运作流程，那也许写写crud，职业生涯就到头了。技术人应该用防患于未然的心态去思考未来的路，居安思危，未雨绸缪，学习行业细则。 ###1.呼叫中心简单说明  按接入技术分类可分为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="苏文杰的技术博客">
+<meta property="og:url" content="http://yoursite.com/2017/12/13/呼叫中心系统技术学习笔记/index.html">
+<meta property="og:site_name" content="苏文杰的技术博客">
+<meta property="og:description" content="呼叫中心系统技术学习笔记标签（空格分隔）： cti 软电话 crm  ###前言近日读了《我编程 我快乐 程序员职业规划之道》后，深有同感，身为一个初入行业的javaEE开发者，既然选择了cti领域，却不知道行业发展趋势和运作流程，那也许写写crud，职业生涯就到头了。技术人应该用防患于未然的心态去思考未来的路，居安思危，未雨绸缪，学习行业细则。 ###1.呼叫中心简单说明  按接入技术分类可分为">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img1.cache.netease.com/catchpic/9/9B/9BB1BF87D1DFE7509AA5D199F91DFDD4.jpg">
+<meta property="og:updated_time" content="2017-12-13T08:21:18.073Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="苏文杰的技术博客">
+<meta name="twitter:description" content="呼叫中心系统技术学习笔记标签（空格分隔）： cti 软电话 crm  ###前言近日读了《我编程 我快乐 程序员职业规划之道》后，深有同感，身为一个初入行业的javaEE开发者，既然选择了cti领域，却不知道行业发展趋势和运作流程，那也许写写crud，职业生涯就到头了。技术人应该用防患于未然的心态去思考未来的路，居安思危，未雨绸缪，学习行业细则。 ###1.呼叫中心简单说明  按接入技术分类可分为">
+<meta name="twitter:image" content="http://img1.cache.netease.com/catchpic/9/9B/9BB1BF87D1DFE7509AA5D199F91DFDD4.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/13/呼叫中心系统技术学习笔记/"/>
+
+
+
+
+
+  <title> | 苏文杰的技术博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">苏文杰的技术博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">成年人的世界没有容易二字</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/呼叫中心系统技术学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SWJ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://qzone.qqjay.com/u/files/2011/0505/ff58f34ab463720fb7aeb23e18dc7790.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏文杰的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-13T16:21:10+08:00">
+                2017-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="呼叫中心系统技术学习笔记"><a href="#呼叫中心系统技术学习笔记" class="headerlink" title="呼叫中心系统技术学习笔记"></a>呼叫中心系统技术学习笔记</h1><p>标签（空格分隔）： cti 软电话 crm</p>
+<hr>
+<p>###前言<br>近日读了《我编程 我快乐 程序员职业规划之道》后，深有同感，身为一个初入行业的javaEE开发者，既然选择了cti领域，却不知道行业发展趋势和运作流程，那也许写写crud，职业生涯就到头了。技术人应该用防患于未然的心态去思考未来的路，居安思危，未雨绸缪，学习行业细则。<br><img src="http://img1.cache.netease.com/catchpic/9/9B/9BB1BF87D1DFE7509AA5D199F91DFDD4.jpg" alt="dream_place"></p>
+<p>###1.呼叫中心简单说明</p>
+<blockquote>
+<p>按接入技术分类可分为基于交换机的呼叫中心、基于计算机的板卡式呼叫中心。<br>区别：<br>　　前台接入不同，基于交换机的方式是由交换机将用户呼叫接入到后台座席人员。基于计算机语音板}的方式则是由计算机通过语音处理板卡完成对用户拨入呼叫的控制。<br>交换机：技术成熟早，系统稳定性可靠性好，但成本较高。<br>计算机板卡：成本低廉，稳定性可靠性差些。</p>
+<p>呼叫类型：呼入，呼出，混合</p>
+<p>呼叫规模：<br>(1)大型呼叫中心<br>　　一般认为超过100个人工座席的呼叫中心称为大型呼叫中心。它至少需要有足够容量的大型交换机、自动呼叫分配设备、自动语音应答系统、CTI报务器、人工座席和终端、呼叫管理系统或数据库。<br>(2)中型呼叫中心<br>　　人工座席在50～100之问的呼叫中心称为中型呼叫中心。中型呼叫中心PBX与CTI服务器、人工座席直接相连，人工座席又与应用服务器相连，客户资料存储在应用服务器中，应用服务器实时地将打入电话的客户的资料自动地在计算机屏幕上弹出，使座席人员能及时获得相应信息。CTI服务器一般由CTI硬件开发商的板卡和PC组成。<br>(3)小型呼叫中心<br>　　座席数目在50以下的小型呼叫中心的系统结构与中型呼叫中心类似，不过其主要部分如PBX、CTI服务器、人工座席、应用服务器在数量上均可做相应减少。</p>
+</blockquote>
+<p>###2.呼叫中心常用名词</p>
+<blockquote>
+<p>1.CTI ( Computer Telephony Integration)<br>　　计算机电话集成。CTI技术跨越计算机技术和电信技术两大领域，提供的一些典型业务主要有基于用户设备(CPE)的消息系统、交互语音应答、呼叫中心系统、增值业务、IP电话等。<br>CTI呼叫中心系统一般包括：电话线路、坐席设备、CTI服务器、CTI呼叫中心中间件、呼叫中心应用软件。<br>2.PBX（Private Branch Exchange）<br>　　用户级交换机。传统的PBX利用电路交换的原理来实现集团电话的功能，而IP PBX则使用TCP／IP协议，利用包交换的原理，在以太网上实现了相同的功能。<br>3.VoIP（Voice over Internet Protocol）<br>　　简而言之就是将模拟声音讯号(Voice)数字化，以数据封包(Data Packet)的型式在 IP 数据网络 (IP Network)上做实时传递。VoIP(Voice over Internet Protocol)是一种以IP电话为主，并推出相应的增值业务的技术。 VoIP最大的优势是能广泛地采用Internet和全球IP互连的环境，提供比传统业务更多、更好的服务。<br>4.softSwitch<br>　　软交换技术。软交换的概念最早起源于美国。当时在企业网络环境下，用户采用基于以太网的电话，通过一套基于PC服务器的呼叫控制软件（CallManager、CallServer），实现PBX功能（IPPBX）。由于既能执行与基于硬件的传统电话交换机相同的功能，又能同时处理IP通信，软交换技术承诺可提供许多优势，如轻松整合电路交换和分组交换、降低网络成本以便运营商更快获得收入。<br>5.NGN（next generation network）<br>　　下一代网络。主要思想是在一个统一的网络平台上以统一管理的方式提供多媒体业务，整合现有的市内固定电话、移动电话的基础上（统称FMC），增加多媒体数据服务及其他增值型服务。其中话音的交换将采用软交换技术，而平台的主要实现方式为IP技术，逐步实现统一通信其中voip将是下一代网络中的一个重点。为了强调IP技术的重要性，业界的主要公司之一思科公司（Cisco Systems）主张称为IP-NGN。<br>6.ACD （Automatic Call Distribution）<br>　　自动呼叫分配。ACD 主要负责根据一定的分配算法（例如，平均分配算法或基于服务技能算法等），将用户的呼叫自动分配给业务组内最合适的业务代表。自动呼叫分配设备系统性能的优劣直接影响到呼叫中心的效率和顾客的满意度。ACD一般包括两个功能模块，即排队模块和呼叫分配模块。排队模块可以实现留言排队、重要客户优先排队等增强排队功能，此外，还可以在客户排队时向客户其通知排队状态，如目前在队列中的位置、预计等待时间等。呼叫分配模块可以将座席人员按技能和技术熟练程度进行详细分组，并与CTI路由模块结合，实现专家话务员选择，保证客户得到最合适的座席人员的服务，对于重要客户还允许其直接呼叫座席人员。<br>　　在交换机方案中，ACD算法常常内嵌入交换机中，可以通过控制终端进行灵活的选择；在板卡方案中，ACD算法可以通过软件进行设计。<br>物理上，ACD通常与程控交换机（Private Branch eXchange）配套使用，程控交换机对外提供与市话局中继线的接口，对内提供连接座席话机和自动语音应答系统的内线接口。中继线数目大于内线数目，多出来的中继线由ACD进行分配。当外部来电的数目大于座席人员的处理能力时，ACD就会将来不及处理的电话放入等待队列中，等座席人员空闲时再将队列中的电话转接过去。<br>7.IVR（Interactive Voice Response）<br>　　互动式语音应答。现阶段，IVR业务的进入门槛主要体现在IVR业务资质申请的难度上。<br>　　IVR业务的技术门槛其实相当低。SP（service provider）向运营商申请接入号码资源，购买相应的语音平台设备与运营商的语音网关进行信令/话务中继的连接，搭建自己的服务系统（硬软方案十分成熟），创建自己的语音业务流程后，即可开展IVR业务了。<br>8.中继网关（trunk gateway）<br>　　中继网关是NGN解决方案的重要组成部分，它位于NGN网络的边缘接入层，连接PSTN和NGN网络，实现IP包转TDM的功能。它承载着IP域与电路域的语音汇接任务，对电路侧的回音需要有很好的处理机制。中继网关的功能包括：语音处理功能、呼叫处理与控制、维护和管理等。<br>9.信令网关（Signaling network）<br>　　信令网关是连接No.7信令网与IP网的互联互通设备，如图1所示，信令网关用于实现No.7信令网与IP网的互通，它主要完成PSTN/ISDN侧的No.7信令与IP侧信令的转换功能，SG负责终结No.7信令协议的MTP3，并向基于IP的用户提供信令延伸。即信令网关位于No.7信令网和软交换之间，用于解决软交换与传统No.7信令网之间的互通问题，它是No.7信令网与IP网的边缘接收和发送信令消息的信令代理，它的作用是在IP网络和传统PSTN网络之间提供信令映射和代码转换功能，将电路交换的信令流分组化并在IP网络上传输，也可以反过来在IP网络去往PSTN的方向上执行信令的转换功能，信令网关对PSTN侧采用数字中继接口，分组网侧采用LAN等接口，SG的作用随着软交换的深入发展而进行。<br>10.信令（Signaling）<br>　　信令是指通信系统中的控制指令。它允许网络中的“智能”节点交换下列有关信息：呼叫的建立、监控（Supervision）、拆除（Teardown）以及网络管理等信息。信令是在无线通信系统中，除了传输用户信息之外，为使全网有轶序地工作，用来保证正常通信所需要的控制信号。<br>　　共路信令：信令传输通道与话路完全分开，将若干条话路的信令集中起来，在一条公共的高速数据链路上传送。信令以统一格式的消息信令单元形式传送，从而实现了局间信令传送形式的高度统一，不再象随路信令方式那样，分别传送线路信令和记发器信令。<br>　　随路信令：信令在各自对应的语音信道中或固定分配的通道中传送，从功能上可划分为线路信令（Line Signalling）和记发器信令（Interregister Signalling）。过去PSTN的信令都是随路信令，就是和话音一起在一条中继线里面传输的，在E1中占用第16时隙。<br>11.SIP(Session initiation protocol)<br>　　会话发起协议。是由IETF（Internet Engineering Task Force，因特网工程任务组）制定的多媒体通信协议。它是一个基于文本的应用层控制协议，用于创建、修改和释放一个或多个参与者的会话。广泛应用于CS（Circuit Switched，电路交换）、NGN（Next Generation Network，下一代网络）以及IMS（IP Multimedia Subsystem，IP多媒体子系统）的网络中，可以支持并应用于语音、视频、数据等多媒体业务，同时也可以应用于Presence（呈现）、Instant Message（即时消息）等特色业务。</p>
+</blockquote>
+<p>　　人总是害怕去追求自己最重要的梦想，因为他们觉得自己不配拥有，或者觉得自己没有能力去完成。</p>
+<p>©&amp;nbsp2017&amp;nbspswj940609.github.io&amp;nbsp&amp;nbsp 深圳龙华民治</p> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/11/我常用的Linux命令/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://qzone.qqjay.com/u/files/2011/0505/ff58f34ab463720fb7aeb23e18dc7790.jpg"
+              alt="SWJ" />
+          
+            <p class="site-author-name" itemprop="name">SWJ</p>
+            <p class="site-description motion-element" itemprop="description">this is first step</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#呼叫中心系统技术学习笔记"><span class="nav-number">1.</span> <span class="nav-text">呼叫中心系统技术学习笔记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SWJ</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
